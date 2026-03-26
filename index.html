@@ -1,0 +1,18 @@
+<!-- ✅ STEP 1: Paste this inside your <head> tag -->
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="My App">
+<link rel="apple-touch-icon" href="icon-192.png">
+
+
+<!-- ✅ STEP 2: Paste this just before your </body> tag -->
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(() => console.log('Service Worker registered ✅'))
+      .catch(err => console.error('SW error:', err));
+  }
+</script>
